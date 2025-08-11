@@ -42,9 +42,6 @@ p, h1, h2, h3, h4, h5, h6 {
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
-  text-wrap: balance;
-}
 
 /*
   10. Create a root stacking context
@@ -71,11 +68,37 @@ h1, h2, h3, h4, h5, h6 {
 --fweight-regular: 400;
 --fweight-bold: 600;
 --fweight-extrabold: 700;
+
+--fsize-extralarge: 2.2rem;
+--fsize-large: 1.6rem;
 }
 
 body {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
   font-style: normal;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.omelette-img {
+  border-radius: 1rem;
+}
+
+h1, h2 {
+  font-family: "Young Serif", serif;
+  font-weight: var(--fweight-regular);
+}
+
+.main-title {
+  font-size: var(--fsize-extralarge);
+}
+
+h2 {
+  font-size: var(--fsize-large);
 }
