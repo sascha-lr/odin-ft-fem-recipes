@@ -57,6 +57,7 @@ p {
 
 --stone-100: hsl(30, 54%, 90%);
 --stone-150: hsl(30, 18%, 87%);
+--stone-250: hsl(30, 8%, 72%);
 --stone-600: hsl(30, 10%, 34%);
 --stone-900: hsl(24, 5%, 18%);
 
@@ -70,20 +71,42 @@ p {
 --fweight-extrabold: 700;
 
 --fsize-extralarge: 2.2rem;
---fsize-large: 1.6rem;
+--fsize-large: 1.75rem;
 }
 
 body {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  display: grid;
+  place-content: center;
+  background-color: var(--stone-100);
+}
+
+.spacing-container {
+  height: 7.5rem;
+}
+@media only screen and (max-width: 47.5rem) {
+  .spacing-container {
+    height: 0;
+  }
+  main {
+    border-radius: 0;
+  }
 }
 
 main {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
   padding: 2rem;
+  color: var(--stone-600);
+  background-color: white;
+  max-height: fit-content;
+  min-width: 375px;
+  max-width: 47.5rem;
+  max-height: fit-content;
+  border-radius: 1.5rem;
 }
 
 .omelette-img {
@@ -97,8 +120,78 @@ h1, h2 {
 
 .main-title {
   font-size: var(--fsize-extralarge);
+  line-height: 2.25rem;
+  color: var(--stone-900);
 }
 
 h2 {
   font-size: var(--fsize-large);
+}
+
+.prep-time-container {
+  padding: 1.25rem;
+  background-color: var(--rose-50);
+  border-radius: 1rem;
+  color: var(--stone-600);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.prep-time.heading {
+  color: var(--rose-800);
+  font-weight: 600;
+}
+
+li {
+  padding: .35rem;
+}
+
+.heading {
+  color: var(--brown-800);
+}
+
+.list {
+  padding-bottom: 1.25rem;
+  border-bottom: solid .05rem var(--stone-150);
+}
+
+.prep-time-list li::marker {
+  font-size: .75rem;
+  color: var(--rose-800);
+}
+
+.ingredients.list li::marker {
+  font-size: .75rem;
+  color: var(--brown-800);
+}
+
+.instructions.list li::marker {
+  color: var(--brown-800);
+  font-weight: 600;
+}
+
+td {
+  border-bottom: solid .05rem var(--stone-150);
+  padding: .5rem;
+}
+
+.fat-title, .fat.amount {
+  border-bottom: 0;
+}
+
+.amount {
+  font-weight: 600;
+  color: var(--brown-800);
+}
+
+.attribution {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: .75rem;
+  color: var(--stone-250);
+}
+
+.attribution a {
+  color: var(--stone-250);
 }
