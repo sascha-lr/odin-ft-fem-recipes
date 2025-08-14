@@ -70,8 +70,11 @@ p {
 --fweight-bold: 600;
 --fweight-extrabold: 700;
 
---fsize-extralarge: 2.2rem;
+--fsize-extralarge: 2.25rem;
 --fsize-large: 1.75rem;
+--fsize-small: .75rem;
+
+--max-container-width: 45rem;
 }
 
 body {
@@ -85,13 +88,22 @@ body {
 
 .spacing-container {
   height: 7.5rem;
+  max-width:  var(--max-container-width);
 }
-@media only screen and (max-width: 47.5rem) {
+
+@media only screen and (max-width: 45rem) {
   .spacing-container {
+    height: fit-content;
+  }
+  body {
+    background-color: white;
+  }
+  .recipe-img-desktop {
     height: 0;
   }
-  main {
-    border-radius: 0;
+  .recipe-img-mobile {
+    min-height: calc(100vw/164*75);
+    min-width: 100vw;
   }
 }
 
@@ -99,18 +111,20 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  padding: 2rem;
+  padding: 1.85rem;
   color: var(--stone-600);
   background-color: white;
-  max-height: fit-content;
-  min-width: 375px;
-  max-width: 47.5rem;
+  max-width:  var(--max-container-width);
   max-height: fit-content;
   border-radius: 1.5rem;
 }
 
-.omelette-img {
+.recipe-img-desktop {
   border-radius: 1rem;
+}
+
+.recipe-img-mobile {
+  height: 0;
 }
 
 h1, h2 {
@@ -140,7 +154,7 @@ h2 {
 
 .prep-time.heading {
   color: var(--rose-800);
-  font-weight: 600;
+  font-weight: var(--fweight-bold);
 }
 
 li {
@@ -157,18 +171,18 @@ li {
 }
 
 .prep-time-list li::marker {
-  font-size: .75rem;
+  font-size: var(--fsize-small);
   color: var(--rose-800);
 }
 
 .ingredients.list li::marker {
-  font-size: .75rem;
+  font-size: var(--fsize-small);
   color: var(--brown-800);
 }
 
 .instructions.list li::marker {
   color: var(--brown-800);
-  font-weight: 600;
+  font-weight: var(--fweight-bold);
 }
 
 td {
@@ -181,14 +195,14 @@ td {
 }
 
 .amount {
-  font-weight: 600;
+  font-weight: var(--fweight-bold);
   color: var(--brown-800);
 }
 
 .attribution {
   text-align: center;
   margin-top: 1rem;
-  font-size: .75rem;
+  font-size: var(--fsize-small);
   color: var(--stone-250);
 }
 
