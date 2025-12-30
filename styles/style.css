@@ -127,6 +127,8 @@ main {
 .recipe-img-desktop {
   border-radius: 1rem;
   margin-bottom: .5rem;
+  height: auto;
+  width: auto;
 }
 
 .recipe-img-mobile {
