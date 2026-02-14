@@ -1,1 +1,1 @@
-# FrontEnd Mentor / The Odin Project | Recipe Page Challenge
+# Frontend Mentor / The Odin Project | Recipe Page Challenge
